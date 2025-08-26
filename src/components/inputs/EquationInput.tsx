@@ -1,8 +1,11 @@
+
+import { lazy, Suspense, useRef, type FC } from 'react';
 import React, { Suspense, useRef, type FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setEquation } from '../../store/mathSlice';
 import { RootState } from '../../store/store';
 
+const EditableMathField = lazy(() =>
 const EditableMathField = React.lazy(() =>
   import('react-mathquill').then((mq) => {
     mq.addStyles();
@@ -41,6 +44,7 @@ const EquationInput: FC = () => {
 
   // keep ref in sync with the Redux value without triggering an effect
   last.current = equation;
+
   const [mq, setMq] = useState<any>(null);
 
   useEffect(() => {
