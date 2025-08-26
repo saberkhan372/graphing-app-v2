@@ -1,3 +1,4 @@
+import { useRef, FC } from 'react';
 import { useEffect, useRef, FC } from 'react';
 import React, { useEffect, useRef } from 'react';
 import React from 'react';
@@ -9,6 +10,11 @@ import { RootState } from '../../store/store';
 addStyles();
 
 const EquationInput: FC = () => {
+  const dispatch = useDispatch();
+  const equation = useSelector((state: RootState) => state.math.equation);
+  const last = useRef(equation);
+  // keep ref in sync with the Redux value without triggering an effect
+  last.current = equation;
 const EquationInput: React.FC = () => {
   const dispatch = useDispatch();
   const equation = useSelector((state: RootState) => state.math.equation);
@@ -24,7 +30,6 @@ const EquationInput: React.FC = () => {
       last.current = next;
       dispatch(setEquation(next));
     }
-
   const handleChange = (field: any) => {
     const next = field.latex();
     if (next !== equation) {
