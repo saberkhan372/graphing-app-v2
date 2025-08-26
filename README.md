@@ -11,6 +11,9 @@ This project provides a React + TypeScript graphing environment aimed at Algebra
 - Vite for development and build tooling
 - Services prepared for PostgreSQL with a Redis caching layer
 
+## Requirements
+- Node.js 20.19 or 22.12 and npm
+
 ## Development
 ```bash
 npm install
