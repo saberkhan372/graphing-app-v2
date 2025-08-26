@@ -2,6 +2,7 @@ import React from 'react';
 import PlotlyGraph from './components/graphs/PlotlyGraph';
 import EquationInput from './components/inputs/EquationInput';
 import LessonContainer from './components/educational/LessonContainer';
+
 import ErrorBoundary from './components/ErrorBoundary';
 
 const App: React.FC = () => (
@@ -10,6 +11,7 @@ const App: React.FC = () => (
     <ErrorBoundary>
       <EquationInput />
     </ErrorBoundary>
+    <EquationInput />
     <PlotlyGraph />
     <LessonContainer />
   </div>
