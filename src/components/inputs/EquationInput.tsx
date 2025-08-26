@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState, type FC } from 'react';
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setEquation } from '../../store/mathSlice';
