@@ -1,3 +1,9 @@
+import React, { useEffect, useRef, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setEquation } from '../../store/mathSlice';
+import { RootState } from '../../store/store';
+
+const EquationInput: React.FC = () => {
 
 import { useEffect, useRef, useState, FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
