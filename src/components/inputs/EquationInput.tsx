@@ -11,6 +11,10 @@ const EquationInput: React.FC = () => {
   const equation = useSelector((state: RootState) => state.math.equation);
 
   const handleChange = (field: any) => {
+    const next = field.latex();
+    if (next !== equation) {
+      dispatch(setEquation(next));
+    }
     dispatch(setEquation(field.text()));
   };
 
