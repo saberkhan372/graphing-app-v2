@@ -15,6 +15,7 @@ const EquationInput: React.FC = () => {
     if (next !== equation) {
       dispatch(setEquation(next));
     }
+    dispatch(setEquation(field.text()));
   };
 
   return <EditableMathField latex={equation} onChange={handleChange} />;
